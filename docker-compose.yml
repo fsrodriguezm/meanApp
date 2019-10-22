@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  frontend:
+    build: frontend
+    container_name: angular
+    ports: 
+      - "4200:4200"
+    networks:
+      - net-1
+  backend:
+    build: backend
+    depends_on: 
+      - mongo
+    container_name: node
+    ports:
+      - "3000:3000"
+    networks:
+      - net-1
+  mongo:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - db-data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - net-1 
+volumes:
+  db-data:
+networks:
+  net-1:
