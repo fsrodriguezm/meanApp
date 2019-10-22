@@ -4,7 +4,7 @@ A simple MEAN CRUD application.
 
 ![Screenshot](/meanApp.png)
 
-docker-compose is being utilized to bring up all three services.
+docker-compose is utilized to bring up all services.
 ```
 angular
 node
